@@ -3,6 +3,7 @@ import Input from "@/components/Input/Input";
 import Label from "@/components/Label/Label";
 import Select from "@/components/Select/Select";
 import Separator from "@/components/Seperator/Seperator";
+import Skeleton from "@/components/Skeleton/Skeleton";
 import TransactionItem from "@/components/Transaction-item/Transaction-item";
 import TransactionSummaryItem from "@/components/TransactionSummery/TransactionSummery";
 import TransactionSummeryItem from "@/components/TransactionSummery/TransactionSummery";
@@ -19,7 +20,7 @@ const Page = () => {
       <h1 className="text-4xl mt-8">Playground</h1>
       <div>
         <h2 className="mb-4 text-lg font-mono">PageHeader</h2>
-        <hr className="mb-4 border-gray-200 dark:border-gray-800" />
+        <Separator />
         <div>
           <PageHeader />{" "}
         </div>
@@ -89,7 +90,7 @@ const Page = () => {
 
       <div>
         <h2 className="mb-4 text-lg font-mono">Buttons</h2>
-        <hr className="mb-4 border-gray-200 dark:border-gray-800" />
+        <Separator />
         <div className="space-x-4">
           <Button>Hello</Button>
           <Button variant="outline">Hello</Button>
@@ -101,7 +102,7 @@ const Page = () => {
       </div>
       <div>
         <h2 className="mb-4 text-lg font-mono">Forms</h2>
-        <hr className="mb-4 border-gray-200 dark:border-gray-800" />
+        <Separator />
         <div
           className="grid grid-cols-2 gap-4
         "
@@ -122,6 +123,25 @@ const Page = () => {
           <div className="flex gap-2 items-center">
             <Input type="checkbox" id="terms" />
             <Label htmlFor="terms">Accept terms</Label>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2 className="mb-4 text-lg font-mono">Loading Skeleton</h2>
+        <Separator />
+        <div
+          className="space-y-8
+        "
+        >
+          <div className="flex space-x-4">
+            <Skeleton />
+            <Skeleton />
+            <Skeleton />
+          </div>
+          <div className="space-y-4">
+            <Skeleton />
+            <Skeleton />
+            <Skeleton />
           </div>
         </div>
       </div>
