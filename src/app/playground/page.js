@@ -2,7 +2,9 @@ import Button from "@/components/Button/Button";
 import Input from "@/components/Input/Input";
 import Label from "@/components/Label/Label";
 import Select from "@/components/Select/Select";
+import Separator from "@/components/Seperator/Seperator";
 import TransactionItem from "@/components/Transaction-item/Transaction-item";
+import TransactionSummaryItem from "@/components/TransactionSummery/TransactionSummery";
 import TransactionSummeryItem from "@/components/TransactionSummery/TransactionSummery";
 import PageHeader from "@/components/pageHeader/pageHeader";
 import Trend from "@/components/trend/trend";
@@ -24,41 +26,67 @@ const Page = () => {
       </div>
       <div>
         <h2 className="mb-4 text-lg font-mono">Trend</h2>
-        <hr className="mb-4 border-gray-200 dark:border-gray-800" />
+        <Separator />
         <div className="flex space-x-8">
-          <Trend type={"Income"} amount={1000} prevAmount={900} />
-          <Trend type={"Expense"} amount={1000} prevAmount={12000} />
-          <Trend type={"Investment"} amount={1000} prevAmount={300} />
-          <Trend type={"Saving"} amount={1000} prevAmount={5482} />
+          <Trend type="Income" amount={1000} prevAmount={900} />
+          <Trend type="Expense" amount={12000} prevAmount={10000} />
+          <Trend type="Investment" amount={7000} prevAmount={11100} />
+          <Trend type="Saving" amount={500} prevAmount={950} />
         </div>
       </div>
+
       <div>
-        <h2 className="mb-4 text-lg font-mono">Transaction Item</h2>
-        <hr className="mb-4 border-gray-200 dark:border-gray-800" />
+        <h2 className="mb-4 text-lg font-mono">TransactionItem</h2>
+        <Separator />
         <div className="space-y-4">
+          <TransactionItem type="Income" description="Salary" amount={2000} />
           <TransactionItem
-            type={"Income"}
-            description={"Salary"}
-            amount={2000}
+            type="Expense"
+            category="Food"
+            description="Going out to eat"
+            amount={29}
           />
           <TransactionItem
-            type={"Expense"}
-            description={"Going out to eat"}
-            category={"Food"}
-            amount={50}
+            type="Saving"
+            description="For children"
+            amount={500}
           />
           <TransactionItem
-            type={"Saving"}
-            description={"For children"}
-            amount={400}
-          />
-          <TransactionItem
-            type={"Investment"}
-            description={"In Microsoft"}
-            amount={800}
+            type="Investment"
+            description="In Microsoft"
+            amount={9000}
           />
         </div>
       </div>
+
+      <div>
+        <h2 className="mb-4 text-lg font-mono">
+          TransactionSummaryItem + TransactionItem
+        </h2>
+        <Separator />
+        <div className="space-y-4">
+          <TransactionSummaryItem date="2024-05-01" amount={3500} />
+          <Separator />
+          <TransactionItem type="Income" description="Salary" amount={2000} />
+          <TransactionItem
+            type="Expense"
+            category="Food"
+            description="Going out to eat"
+            amount={29}
+          />
+          <TransactionItem
+            type="Saving"
+            description="For children"
+            amount={500}
+          />
+          <TransactionItem
+            type="Investment"
+            description="In Microsoft"
+            amount={9000}
+          />
+        </div>
+      </div>
+
       <div>
         <h2 className="mb-4 text-lg font-mono">Buttons</h2>
         <hr className="mb-4 border-gray-200 dark:border-gray-800" />
